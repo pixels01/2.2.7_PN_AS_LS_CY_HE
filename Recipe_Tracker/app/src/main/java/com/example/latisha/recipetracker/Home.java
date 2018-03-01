@@ -17,10 +17,9 @@ import android.view.MenuItem;
 
 import com.backendless.Backendless;
 
-public class Home extends AppCompatActivity
+public class Home extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-        implements NavigationView.OnNavigationItemSelectedListener {
-    private static final String TAG = ApplicantActivityCopy.class.getName();
+    private static final String TAG = Home.class.getName();
 
     private static final String BE_APP_ID = "AADC6753-D6C0-0E8E-FFEC-A66FE9FC6400";
     private static final String BE_ANDROID_API_KEY = "0D738A1A-30EE-61FB-FF3B-B26E09655F00";
