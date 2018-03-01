@@ -28,15 +28,15 @@ import com.backendless.exceptions.BackendlessFault;
 public class ApplicantActivityCopy extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
         private static final String TAG = ApplicantActivityCopy.class.getName();
 
-        private static final String BE_APP_ID = "2D3E27BC-5A03-2F2F-FF2C-A3386CBFA600";
-        private static final String BE_ANDROID_API_KEY = "24A0D967-7061-DDFC-FFF1-9292CBF4A400";
+        private static final String BE_APP_ID = "AADC6753-D6C0-0E8E-FFEC-A66FE9FC6400";
+        private static final String BE_ANDROID_API_KEY = "0D738A1A-30EE-61FB-FF3B-B26E09655F00";
         public  static final String EMAIL_PREF = "EMAIL_PREF";
         private static final String MY_EMAIL_ADDRESS = "lsmarty23@gmail.com";
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.activity_applicant);
+            setContentView(R.layout.activity_home);
             Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
             setSupportActionBar(toolbar);
 /*
@@ -77,12 +77,12 @@ public class ApplicantActivityCopy extends AppCompatActivity implements Navigati
             }
         }
 
-        @Override
+        /*@Override
         public boolean onCreateOptionsMenu(Menu menu) {
             // Inflate the menu; this adds items to the action bar if it is present.
             getMenuInflater().inflate(R.menu.applicant, menu);
             return true;
-        }
+        }*/
 
         @Override
         public boolean onOptionsItemSelected(MenuItem item) {

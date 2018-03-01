@@ -1,5 +1,7 @@
 package com.example.latisha.recipetracker;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,8 +15,17 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.backendless.Backendless;
+
 public class Home extends AppCompatActivity
+
         implements NavigationView.OnNavigationItemSelectedListener {
+    private static final String TAG = ApplicantActivityCopy.class.getName();
+
+    private static final String BE_APP_ID = "AADC6753-D6C0-0E8E-FFEC-A66FE9FC6400";
+    private static final String BE_ANDROID_API_KEY = "0D738A1A-30EE-61FB-FF3B-B26E09655F00";
+    public  static final String EMAIL_PREF = "EMAIL_PREF";
+    private static final String MY_EMAIL_ADDRESS = "lsmarty23@gmail.com";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +43,13 @@ public class Home extends AppCompatActivity
             }
         });
 
+        Backendless.initApp(this, BE_APP_ID, BE_ANDROID_API_KEY);
+
+        SharedPreferences sharedPreferences = this.getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putString(EMAIL_PREF, MY_EMAIL_ADDRESS);
+        editor.commit();
+
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
@@ -40,6 +58,9 @@ public class Home extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+
+
     }
 
     @Override
