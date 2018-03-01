@@ -25,11 +25,8 @@ import com.backendless.exceptions.BackendlessFault;
  * Created by Latisha on 3/1/18.
  */
 
-public class ApplicantActivityCopy {
-
-    public class ApplicantActivity extends AppCompatActivity
-            implements NavigationView.OnNavigationItemSelectedListener {
-        private static final String TAG = ApplicantActivity.class.getName();
+public class ApplicantActivityCopy extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
+        private static final String TAG = ApplicantActivityCopy.class.getName();
 
         private static final String BE_APP_ID = "2D3E27BC-5A03-2F2F-FF2C-A3386CBFA600";
         private static final String BE_ANDROID_API_KEY = "24A0D967-7061-DDFC-FFF1-9292CBF4A400";
@@ -129,4 +126,4 @@ public class ApplicantActivityCopy {
         }
     }
 
-}
+
