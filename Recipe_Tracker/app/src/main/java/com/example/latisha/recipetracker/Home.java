@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -101,14 +102,20 @@ public class Home extends AppCompatActivity implements NavigationView.OnNavigati
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-            // Handle the camera action
+            Log.i(TAG, "home menu item selected.");
+
         } else if (id == R.id.nav_add_recipe) {
+            Log.i(TAG, "recipe menu item selected.");
+            setContentView(R.layout.addrecipe_page);
 
         } else if (id == R.id.nav_breakfast) {
+            Log.i(TAG, "breakfast menu item selected.");
 
         } else if (id == R.id.nav_lunch) {
+            Log.i(TAG, "lunch menu item selected.");
 
         } else if (id == R.id.nav_dinner) {
+            Log.i(TAG, "dinner menu item selected.");
 
         }
 
