@@ -27,7 +27,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        txt = (EditText)findViewById(R.id.txtInput);
+        txt = (EditText)findViewById(R.id.Name);
         show = (ListView)findViewById(R.id.listView);
         save = (Button)findViewById(R.id.button3);
         save.setOnClickListener(new View.OnClickListener() {
@@ -46,7 +46,7 @@ public class MainActivity extends Activity {
                     addArray.add(getInput);
                     ArrayAdapter<String> adapter = new ArrayAdapter<String>(MainActivity.this,android.R.layout.simple_list_item_1, addArray);
                     show.setAdapter(adapter);
-                    ((EditText)findViewById(R.id.txtInput)).setText(" ");
+                    ((EditText)findViewById(R.id.Name)).setText(" ");
 
                 }
             }

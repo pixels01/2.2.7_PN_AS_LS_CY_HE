@@ -12,12 +12,30 @@
         android:orientation="vertical">
 
         <EditText
-            android:id="@+id/txtInput"
+            android:id="@+id/Name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:text="Name" />
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            tools:text="Name" />
+
+        <EditText
+            android:id="@+id/Ingredients"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textImeMultiLine|textPersonName"
+            tools:text="Ingredients" />
+
+        <EditText
+            android:id="@+id/instructions"
+            style="@style/Widget.AppCompat.EditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textMultiLine"
+            tools:text="Instructions" />
 
         <Button
             android:id="@+id/button3"
