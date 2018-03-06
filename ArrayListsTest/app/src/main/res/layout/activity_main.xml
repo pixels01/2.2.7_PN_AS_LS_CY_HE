@@ -17,15 +17,16 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPersonName"
-            android:textAppearance="@style/TextAppearance.AppCompat"
-            tools:text="Name" />
+            android:text="Name"
+            android:textAppearance="@style/TextAppearance.AppCompat" />
 
         <EditText
-            android:id="@+id/Ingredients"
+            android:id="@+id/ingredients"
+            style="@style/Widget.AppCompat.AutoCompleteTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:inputType="textImeMultiLine|textPersonName"
+            android:inputType="textMultiLine"
             tools:text="Ingredients" />
 
         <EditText
