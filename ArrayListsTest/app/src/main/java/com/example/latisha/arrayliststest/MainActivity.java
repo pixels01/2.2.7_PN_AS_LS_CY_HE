@@ -30,17 +30,17 @@ public class MainActivity extends Activity {
         txt = (EditText)findViewById(R.id.txtInput);
         show = (ListView)findViewById(R.id.listView);
         save = (Button)findViewById(R.id.button3);
-        save.setOnClickListener(new onClickListener() {
+        save.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 String getInput = txt.getText().toString();
 
                 if(addArray.contains(getInput)){
-                    Toast.makeText(getBaseContext(), "Item already added to Array", Toast.LENGTH_LONG.show());
+                    Toast.makeText(getBaseContext(), "Item already added to Array", Toast.LENGTH_LONG);
                 }
                 else if (getInput == null || getInput.trim().equals("")){
-                    Toast.makeText(getBaseContext(),"Input Field is Empty",Toast.LENGTH_LONG.show());
+                    Toast.makeText(getBaseContext(),"Input Field is Empty",Toast.LENGTH_LONG);
                 }
                 else {
                     addArray.add(getInput);
