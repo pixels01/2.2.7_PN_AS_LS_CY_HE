@@ -2,6 +2,7 @@ package com.example.latisha.arrayliststest;
 
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -19,10 +20,13 @@ import java.util.ArrayList;
 public class MainActivity extends Activity {
     Button save;
     ArrayList<String> addArray = new ArrayList<String>();
+    ArrayList<String> addRecipe = new ArrayList<String>();
     EditText name;
     ListView show;
+    ListView recipes;
     EditText ingredients;
     EditText recipe;
+    EditText type;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +37,12 @@ public class MainActivity extends Activity {
         ingredients = (EditText)findViewById(R.id.ingredients);
         recipe = (EditText)findViewById(R.id.instructions);
         show = (ListView)findViewById(R.id.listView);
+        recipes = (ListView)findViewById(R.id.recipeList);
         save = (Button)findViewById(R.id.button3);
+        type = (EditText)findViewById(R.id.type);
+        Button btn = (Button)findViewById(R.id.navRec);
+
+
         save.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -41,6 +50,7 @@ public class MainActivity extends Activity {
                 String getInput = name.getText().toString();
                 String getIng = ingredients.getText().toString();
                 String getRecipe = recipe.getText().toString();
+                String getType = type.getText().toString();
 
                 if(addArray.contains(getInput)){
                     Toast.makeText(getBaseContext(), "Item already added to Array", Toast.LENGTH_LONG);
@@ -52,6 +62,11 @@ public class MainActivity extends Activity {
                     addArray.add(getInput);
                     ArrayAdapter<String> adapter = new ArrayAdapter<String>(MainActivity.this,android.R.layout.simple_list_item_1, addArray);
                     show.setAdapter(adapter);
+
+                    addRecipe.add(getInput);
+                    ArrayAdapter<String> recipe = new ArrayAdapter<String>(MainActivity.this,android.R.layout.simple_list_item_1, addRecipe);
+                    recipes.setAdapter(recipe);
+
                     ((EditText)findViewById(R.id.Name)).setText(" ");
 
                 }
@@ -82,6 +97,12 @@ public class MainActivity extends Activity {
                     ((EditText)findViewById(R.id.instructions)).setText(" ");
 
                 }
+            }
+        });
+
+        btn.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                startActivity(new Intent(MainActivity.this, RecipeActivity.class));
             }
         });
 

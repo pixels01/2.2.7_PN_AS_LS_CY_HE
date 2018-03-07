@@ -12,6 +12,14 @@
         android:orientation="vertical">
 
         <EditText
+            android:id="@+id/type"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Breakfast, Lunch, or Dinner?" />
+
+        <EditText
             android:id="@+id/Name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -27,7 +35,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textMultiLine"
-            tools:text="Ingredients" />
+            android:text="Ingredients" />
 
         <EditText
             android:id="@+id/instructions"
@@ -36,13 +44,19 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textMultiLine"
-            tools:text="Instructions" />
+            android:text="Instructions" />
 
         <Button
             android:id="@+id/button3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Save Into Array" />
+
+        <Button
+            android:id="@+id/navRec"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Go To Recipes" />
 
         <ListView
             android:id="@+id/listView"
