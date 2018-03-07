@@ -19,6 +19,7 @@ import java.util.ArrayList;
 
 public class MainActivity extends Activity {
     Button save;
+    Button btn;
     ArrayList<String> addArray = new ArrayList<String>();
     ArrayList<String> addRecipe = new ArrayList<String>();
     EditText name;
@@ -40,7 +41,7 @@ public class MainActivity extends Activity {
         recipes = (ListView)findViewById(R.id.recipeList);
         save = (Button)findViewById(R.id.button3);
         type = (EditText)findViewById(R.id.type);
-        Button btn = (Button)findViewById(R.id.navRec);
+        btn = (Button)findViewById(R.id.navRec);
 
 
         save.setOnClickListener(new View.OnClickListener() {
@@ -64,8 +65,8 @@ public class MainActivity extends Activity {
                     show.setAdapter(adapter);
 
                     addRecipe.add(getInput);
-                    ArrayAdapter<String> recipe = new ArrayAdapter<String>(MainActivity.this,android.R.layout.simple_list_item_1, addRecipe);
-                    recipes.setAdapter(recipe);
+                    //ArrayAdapter<String> recipe = new ArrayAdapter<String>(MainActivity.this,android.R.layout.simple_list_item_1, addRecipe);
+                    //recipes.setAdapter(recipe);
 
                     ((EditText)findViewById(R.id.Name)).setText(" ");
 
