@@ -19,12 +19,13 @@ import java.util.ArrayList;
 
 public class MainActivity extends Activity {
     Button save;
-    Button btn;
+    //Button btn;
     ArrayList<String> addArray = new ArrayList<String>();
     ArrayList<String> addRecipe = new ArrayList<String>();
     EditText name;
     ListView show;
-    ListView recipes;
+    //ListView recipes;
+    ListView recipeTitles;
     EditText ingredients;
     EditText recipe;
     EditText type;
@@ -38,10 +39,11 @@ public class MainActivity extends Activity {
         ingredients = (EditText)findViewById(R.id.ingredients);
         recipe = (EditText)findViewById(R.id.instructions);
         show = (ListView)findViewById(R.id.listView);
-        recipes = (ListView)findViewById(R.id.recipeList);
+        //recipes = (ListView)findViewById(R.id.recipeList);
+        recipeTitles = (ListView)findViewById(R.id.recipeTitles);
         save = (Button)findViewById(R.id.button3);
         type = (EditText)findViewById(R.id.type);
-        btn = (Button)findViewById(R.id.navRec);
+        //btn = (Button)findViewById(R.id.navRec);
 
 
         save.setOnClickListener(new View.OnClickListener() {
@@ -65,6 +67,10 @@ public class MainActivity extends Activity {
                     show.setAdapter(adapter);
 
                     addRecipe.add(getInput);
+                    ArrayAdapter<String> adapter1 = new ArrayAdapter<String>(MainActivity.this,android.R.layout.simple_list_item_1, addRecipe);
+                    recipeTitles.setAdapter(adapter1);
+
+                    //addRecipe.add(getInput);
                     //ArrayAdapter<String> recipe = new ArrayAdapter<String>(MainActivity.this,android.R.layout.simple_list_item_1, addRecipe);
                     //recipes.setAdapter(recipe);
 
@@ -101,11 +107,11 @@ public class MainActivity extends Activity {
             }
         });
 
-        btn.setOnClickListener(new View.OnClickListener() {
+        /*btn.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, RecipeActivity.class));
             }
-        });
+        });*/
 
     }
 }
